@@ -399,7 +399,7 @@ class Client with AuthMixin, HttpMixin implements ClientApi {
     final Callback? callback = option?.callback;
 
     final Map<String, dynamic> internalHeaders = {
-      'content-type': contentType(filename),
+      'content-type': contentType(filepath.split('/').last),
       'content-length': multipartFile.length,
       'x-oss-forbid-overwrite': option.forbidOverride,
       'x-oss-object-acl': option.acl,
